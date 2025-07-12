@@ -94,6 +94,20 @@ segments/
 - Processing time scales with audio length and number of segments
 - Input supports MP3 format, output is WAV format for better compatibility
 
+## Privacy & Security
+
+### Data Handling
+- **Temporary Processing**: All uploaded files are processed in temporary memory and automatically deleted after processing
+- **No Data Storage**: No files or data are permanently stored on the server
+- **User Control**: Users upload their own files and download results directly
+- **Privacy Notice**: Clear privacy notice displayed in the application
+
+### Medical Research Considerations
+- **HIPAA Compliance**: This application does not store or transmit protected health information
+- **File Size Limits**: Free tier has 200MB file size limit
+- **Processing Time**: Large files may take longer to process
+- **Recommendation**: For sensitive medical data, consider self-hosting or using paid tiers
+
 ## Contributing
 
 Feel free to submit issues and enhancement requests!

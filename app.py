@@ -38,10 +38,13 @@ class StreamlitUI:
         with st.sidebar:
             st.header("📁 Upload Files")
             
+            # Add privacy notice
+            st.info("🔒 **Privacy Notice**: Files are processed temporarily and automatically deleted after processing.")
+            
             audio_file = st.file_uploader(
                 "Upload Audio File (MP3)",
                 type=['mp3'],
-                help="Upload your MP3 audio file"
+                help="Upload your MP3 audio file (max 200MB)"
             )
             
             diarization_file = st.file_uploader(
