@@ -1,47 +1,15 @@
-# 🎬 Video Diarization Splitter
+# 🎵 Audio Diarization Splitter
 
-A Streamlit web application that automatically splits video files into segments based on speaker diarization data. Built with clean, object-oriented architecture for maintainability and extensibility.
+A Streamlit web application that automatically splits audio files into segments based on speaker diarization data.
 
 ## Features
 
-- 📁 **Easy File Upload**: Upload MP4 videos and CSV diarization files
+- 📁 **Easy File Upload**: Upload MP3 audio files and CSV diarization files
 - 👥 **Speaker Separation**: Automatically organizes segments by speaker
 - 📊 **Data Preview**: Preview your diarization data before processing
 - ⏱️ **Progress Tracking**: Real-time progress updates during processing
 - 📦 **ZIP Download**: Download all segments as a compressed file
 - 📱 **Responsive Design**: Works on desktop and mobile devices
-- 🏗️ **Clean Architecture**: Object-oriented design for easy maintenance
-
-## Project Structure
-
-```
-psychotherapy_lab/
-├── app.py                 # Main Streamlit application
-├── video_processor.py     # Video processing logic (VideoProcessor class)
-├── requirements.txt       # Python dependencies
-├── README.md             # This file
-└── .streamlit/
-    └── config.toml       # Streamlit configuration
-```
-
-## Architecture
-
-### VideoProcessor Class
-- **Video loading and validation**
-- **Diarization data processing**
-- **Segment creation and organization**
-- **ZIP archive generation**
-- **Resource cleanup**
-
-### VideoDiarizationApp Class
-- **User interface management**
-- **File upload handling**
-- **Progress tracking**
-- **Results display**
-
-### ProcessingStats Class
-- **Statistics calculation**
-- **Results visualization**
 
 ## Requirements
 
@@ -83,7 +51,7 @@ Your diarization CSV file should have the following columns:
 
 ## Usage
 
-1. **Upload Files**: Use the sidebar to upload your MP4 video and CSV diarization file
+1. **Upload Files**: Use the sidebar to upload your MP3 audio file and CSV diarization file
 2. **Preview Data**: Check the diarization data preview to ensure correct format
 3. **Start Processing**: Click the "Start Processing" button
 4. **Download Results**: Download the ZIP file containing all segments organized by speaker
@@ -104,42 +72,27 @@ The app creates a ZIP file with the following structure:
 ```
 segments/
 ├── therapist/
-│   ├── segment_0.03_2.28.mp4
-│   ├── segment_4.09_5.50.mp4
+│   ├── segment_0.03_2.28.mp3
+│   ├── segment_4.09_5.50.mp3
 │   └── ...
 └── patient/
-    ├── segment_2.28_4.09.mp4
-    ├── segment_5.50_7.75.mp4
+    ├── segment_2.28_4.09.mp3
+    ├── segment_5.50_7.75.mp3
     └── ...
 ```
 
 ## Technical Details
 
-- **Video Processing**: Uses MoviePy for video manipulation
+- **Audio Processing**: Uses MoviePy for audio manipulation
 - **File Handling**: Temporary file processing with automatic cleanup
 - **Progress Tracking**: Real-time updates during processing
 - **Error Handling**: Comprehensive error messages and validation
-- **Object-Oriented Design**: Clean separation of concerns
-- **Type Hints**: Full type annotations for better code quality
-
-## Code Organization
-
-### Main Application (`app.py`)
-- `VideoDiarizationApp` class handles the UI and user interactions
-- Clean separation between UI logic and business logic
-- Modular methods for different UI components
-
-### Video Processing (`video_processor.py`)
-- `VideoProcessor` class handles all video-related operations
-- `ProcessingStats` class for statistics and visualization
-- Comprehensive error handling and validation
-- Resource management with automatic cleanup
 
 ## Limitations
 
 - Maximum file size depends on your deployment platform
-- Processing time scales with video length and number of segments
-- Currently supports MP4 format only
+- Processing time scales with audio length and number of segments
+- Currently supports MP3 format only
 
 ## Contributing
 
