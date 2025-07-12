@@ -72,18 +72,18 @@ The app creates a ZIP file with the following structure:
 ```
 segments/
 ├── therapist/
-│   ├── segment_0.03_2.28.mp3
-│   ├── segment_4.09_5.50.mp3
+│   ├── segment_0.03_2.28.wav
+│   ├── segment_4.09_5.50.wav
 │   └── ...
 └── patient/
-    ├── segment_2.28_4.09.mp3
-    ├── segment_5.50_7.75.mp3
+    ├── segment_2.28_4.09.wav
+    ├── segment_5.50_7.75.wav
     └── ...
 ```
 
 ## Technical Details
 
-- **Audio Processing**: Uses MoviePy for audio manipulation
+- **Audio Processing**: Uses librosa and soundfile for audio manipulation
 - **File Handling**: Temporary file processing with automatic cleanup
 - **Progress Tracking**: Real-time updates during processing
 - **Error Handling**: Comprehensive error messages and validation
@@ -92,7 +92,7 @@ segments/
 
 - Maximum file size depends on your deployment platform
 - Processing time scales with audio length and number of segments
-- Currently supports MP3 format only
+- Input supports MP3 format, output is WAV format for better compatibility
 
 ## Contributing
 
