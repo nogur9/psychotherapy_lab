@@ -42,9 +42,9 @@ class StreamlitUI:
             st.info("🔒 **Privacy Notice**: Files are processed temporarily and automatically deleted after processing.")
             
             audio_file = st.file_uploader(
-                "Upload Audio File (MP3)",
-                type=['mp3'],
-                help="Upload your MP3 audio file (max 200MB)"
+                "Upload Audio File (MP3 or WAV)",
+                type=['mp3', 'wav'],
+                help="Upload your MP3 or WAV audio file (max 200MB)"
             )
             
             diarization_file = st.file_uploader(
@@ -169,14 +169,12 @@ class StreamlitUI:
     def _display_summary(self, result):
         """Display processing summary."""
         st.subheader("📋 Processing Summary")
-        col1, col2, col3 = st.columns(3)
+        col1, col2 = st.columns(2)
         
         with col1:
             st.metric("Processed Segments", result.processed_segments)
         with col2:
             st.metric("Speakers", len(result.speakers))
-        with col3:
-            st.metric("Success Rate", f"{result.success_rate:.1%}")
     
     def _display_speaker_breakdown(self, result):
         """Display breakdown by speaker."""
